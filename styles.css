@@ -1,63 +1,65 @@
+/* Full-page GIF background */
 body {
     font-family: "Arial", sans-serif;
     text-align: center;
-    background-color: #ffe6e6; /* Light pink background */
+    background: url("cat-kiss.gif") no-repeat center center fixed;
+    background-color:  #a94063;
+    background-size: cover;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full screen height */
+    height: 100vh;
     margin: 0;
 }
 
-h1 {
-    font-size: 32px;
-    color: #d63384; /* Romantic pink */
+h1{
+    color: white;
+    text-shadow: 2px 2px 10px pink;
+
 }
 
-/* Button Container - Ensures Side-by-Side Layout */
+/* Button container (Keeps buttons side by side) */
 .button-container {
     display: flex;
-    justify-content: center;
-    gap: 20px; /* Space between buttons */
-    margin-top: 20px;
+    gap: 20px;
 }
 
-/* Common Button Styling */
+/* Buttons */
 button {
     padding: 15px 30px;
-    font-size: 20px;
+    font-size: 18px;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    border-radius: 8px;
-    font-weight: bold;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
 }
 
-/* "Yes" Button */
+/* Yes button animation */
 .bounce {
-    background-color: #ff4d6d; /* Red */
-    color: white;
+    background-color: #ff4d6d;
+    color: black;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px white;
+    box-shadow: 0 0 10px #ffcccb;
 }
 
 .bounce:hover {
-    animation: bounce 0.5s infinite;
+    transform: scale(1.1);
 }
 
-/* "No" Button - Moves Away */
+/* No button runs away */
 .rotate {
-    background-color: #6c757d; /* Grey */
-    color: white;
+    background-color: #ffcccb;
+    color: black;
+    font-weight: bold;
     position: relative;
+    text-shadow: 2px 2px 10px white;
+    box-shadow: 0 0 10px #ffcccb;
 }
 
-/* Bounce Animation */
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
+/* Floating emoji animation */
 .emoji {
     position: absolute;
     top: -50px;
@@ -70,4 +72,50 @@ button {
     0% { transform: translateY(0px) rotate(0deg); }
     100% { transform: translateY(100vh) rotate(360deg); }
 }
-    
+
+/* Sparkle effect */
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, white, transparent);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: sparkle-fade 1s ease-out;
+}
+
+@keyframes sparkle-fade {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+/* Fireworks effect */
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 10px yellow, 0 0 20px orange;
+    animation: firework-burst 2s ease-out;
+}
+
+@keyframes firework-burst {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(4); opacity: 0; }
+}
+
+/* Romantic message */
+#love-message {
+    display: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 10px pink;
+    animation: fade-in 2s ease-in-out;
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
