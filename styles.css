@@ -1,0 +1,73 @@
+body {
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    background-color: #ffe6e6; /* Light pink background */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    margin: 0;
+}
+
+h1 {
+    font-size: 32px;
+    color: #d63384; /* Romantic pink */
+}
+
+/* Button Container - Ensures Side-by-Side Layout */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+/* Common Button Styling */
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* "Yes" Button */
+.bounce {
+    background-color: #ff4d6d; /* Red */
+    color: white;
+}
+
+.bounce:hover {
+    animation: bounce 0.5s infinite;
+}
+
+/* "No" Button - Moves Away */
+.rotate {
+    background-color: #6c757d; /* Grey */
+    color: white;
+    position: relative;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.emoji {
+    position: absolute;
+    top: -50px;
+    font-size: 30px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+    
